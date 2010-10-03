@@ -11,8 +11,15 @@ delete $DynaLoader::{boot_DynaLoader};
 # This isn't 100%.  Things like Win32.pm will crap out rather than
 # just not load.  See ExtUtils::MM->_is_win95 for an example
 no warnings 'redefine';
-*DynaLoader::bootstrap = sub { die "Tried to load XS for @_\nTrace:\n"._stacktrace()."\n"; };
-*XSLoader::load        = sub { die "Tried to load XS for @_\nTrace:\n"._stacktrace()."\n"; };
+
+my $original_bootstrap = \&DynaLoader::bootstrap;
+*DynaLoader::bootstrap = sub {
+    die "Tried to load XS for @_\nTrace:\n"._stacktrace()."\n" if $_[0] ne 'Win32';
+    $original_bootstrap->(@_);
+    return;
+};
+
+*XSLoader::load =        sub { die "Tried to load XS for @_\nTrace:\n"._stacktrace()."\n"; };
 
 sub _stacktrace {
     my $call_string = '';
