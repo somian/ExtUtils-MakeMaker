@@ -8,12 +8,10 @@ use strict;
 use File::Path;
 use File::Basename;
 use MakeMaker::Test::Utils;
-use utf8;
 
 my %Files = (
              'Problem-Module/Makefile.PL'   => <<'END',
 use ExtUtils::MakeMaker;
-use utf8;
 
 WriteMakefile(
     NAME    => 'Problem::Module',
@@ -31,7 +29,7 @@ sub setup_recurs {
 
         my $dir = dirname($file);
         mkpath $dir;
-        open(FILE, ">:utf8", $file) || die "Can't create $file: $!";
+        open(FILE, ">", $file) || die "Can't create $file: $!";
         print FILE $text;
         close FILE;
 
