@@ -1052,6 +1052,8 @@ sub _normalize_prereqs {
 sub _normalize_version {
   my ($version) = @_;
   $version = 0 unless defined $version;
+  $version =~ /^([\w\-\+\.]+)/;
+  $version = defined $1 && length($1)>0 ? $1 : sprintf "v%vd", $version;
 
   if ( ref $version eq 'version' ) { # version objects
     $version = $version->is_qv ? $version->normal : $version->stringify;

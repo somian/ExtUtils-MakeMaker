@@ -1120,10 +1120,17 @@ sub clean_versions {
     my $reqs = $self->{$key};
     for my $module (keys %$reqs) {
         my $version = $reqs->{$module};
+        $version = eval "$version" if $version =~ /^\d+\.\d+.\d+$/;
+        $version =~ /^([\w\-\+\.]+)/;
+        $version = defined $1 && length($1)>0 ? $1 : sprintf "v%vd", $version;
 
-        if( !defined $version or $version !~ /^[\d_\.]+$/ ) {
+
+        if( !defined $version or $version !~ /^v?[\d_\.]+$/ ) {
             carp "Unparsable version '$version' for prerequisite $module";
             $reqs->{$module} = 0;
+        }
+        else {
+            $reqs->{$module} = $version;
         }
     }
 }
