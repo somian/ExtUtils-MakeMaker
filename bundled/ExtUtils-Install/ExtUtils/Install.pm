@@ -8,7 +8,7 @@ use Carp ();
 use Config qw(%Config);
 use Cwd qw(cwd);
 use Exporter;
-use ExtUtils::Packlist;
+use ExtUtils::Packlist;# use ExtUtils::Packlist '2.0_01';
 use File::Basename qw(dirname);
 use File::Compare qw(compare);
 use File::Copy;
@@ -38,11 +38,11 @@ ExtUtils::Install - install files from here to there
 
 =head1 VERSION
 
-1.54
+2.0_01 # Last modified: 2013-01-12T05:32:10 UTC-05:00
 
 =cut
 
-$VERSION = '1.54';  # <---- dont forget to update the POD section just above this line!
+$VERSION = '2.0_01';  # <---- dont forget to update the POD section just above this line!
 $VERSION = eval $VERSION;
 
 =pod
