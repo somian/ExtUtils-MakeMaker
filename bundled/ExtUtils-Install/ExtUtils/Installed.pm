@@ -14,11 +14,23 @@ use File::Spec;
 my $Is_VMS = $^O eq 'VMS';
 my $DOSISH = ($^O =~ /^(MSWin\d\d|os2|dos|mint)$/);
 
+my  $MsDeeBuggins = 1;
+    if(    exists $ENV{PERL5_CPAN_IS_EXECUTING}
+        or exists $ENV{PERL5_CPANPLUS_IS_RUNNING}) {
+        $MsDeeBuggins = 0;
+    }
+{
+    no warnings 'uninitialized';
+    if(    $ENV{PERL_MM_OPT}=~/\<verbose\>/
+        or $ENV{PERL_MB_OPT}=~/\<verbose\>/) {
+        $MsDeeBuggins = 1;
+    }
+}
+
 require VMS::Filespec if $Is_VMS;
 
 use vars qw($VERSION);
-$VERSION = '1.999_001';
-$VERSION = eval $VERSION;
+$VERSION = '2.0_01'; $VERSION = eval $VERSION;
 
 sub _is_prefix {
     my ($self, $path, $prefix) = @_;
@@ -88,6 +100,16 @@ sub _fix_dirs {
         s|\\|/|g for @dirs;
     }
     return wantarray ? @dirs : $dirs[0];
+}
+
+sub modspec {
+    my ($self, $module) = @_;
+    return $self->{$module}->{modfile};
+}
+
+sub packlistspec {
+    my ($self, $module) = @_;
+    return $self->{$module}->{packlist_file};
 }
 
 sub _make_entry {
@@ -178,7 +200,7 @@ sub new {
         # Only process module .packlists
         return if $_ ne ".packlist" || $File::Find::dir eq $archlib;
 
-        # Hack of the leading bits of the paths & convert to a module name
+        # Hack off the leading bits of the path specs and convert to a module name
         my $module = $File::Find::name;
         my $found = $module =~ s!^.*?/auto/(.*)/.packlist!$1!s
             or do {
@@ -195,7 +217,15 @@ sub new {
     };
     while (@dirs) {
         $root= shift @dirs;
-        next if !-d $root;
+        if ($MsDeeBuggins) {
+            printf STDERR qq[(%s): Examining directory "%s"\n], __PACKAGE__, $root;
+        }
+        do{ $MsDeeBuggins && do{printf STDERR qq[(%s): Skipping dir named "."\n],__PACKAGE__};
+            next } if $root eq ".";
+        do{ $MsDeeBuggins && do{printf STDERR qq[(%s): Skipping dir named "%52s" [does not exist]\n],__PACKAGE__  , $root};
+            next } if !-d $root;
+        do{ $MsDeeBuggins && do{printf STDERR qq[(%s): Skipping dir named "%52s" [is not readable]\n],__PACKAGE__ , $root};
+            next } if !-r $root;
         find($sub,$root);
     }
 
@@ -449,14 +479,25 @@ This returns the ExtUtils::Packlist object for the specified module.
 
 This returns the version number for the specified module.
 
+=item modspec()
+
+This returns the filename found for the specified module.
+
+=item packlistspec()
+
+This returns the file-path-name spec for the packlist file being used. 
+
 =back
 
 =head1 EXAMPLE
 
-See the example in L<ExtUtils::Packlist>.
+See the examples in inc/contrib/
+
+Also see the example in L<ExtUtils::Packlist>.
 
 =head1 AUTHOR
 
-Alan Burlison <Alan.Burlison@uk.sun.com>
+From 2.0 on, Sören Andersen <somian -*- CPAN org>
+Originally by Alan Burlison <Alan.Burlison@uk.sun.com>
 
 =cut
