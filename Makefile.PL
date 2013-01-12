@@ -105,7 +105,8 @@ my $MM = WriteMakefile(
             license     => 'http://dev.perl.org/licenses/',
             homepage    => 'https://metacpan.org/release/ExtUtils-MakeMaker',
             bugtracker  => 'http://rt.cpan.org/NoAuth/Bugs.html?Dist=ExtUtils-MakeMaker',
-            repository  => 'http://github.com/Perl-Toolchain-Gang/ExtUtils-MakeMaker',
+            repository  => 'https://github.com/somian/ExtUtils-MakeMaker.git',
+              #  git@github.com:somian/ExtUtils-MakeMaker.git
             MailingList => 'makemaker@perl.org',
         },
     },
