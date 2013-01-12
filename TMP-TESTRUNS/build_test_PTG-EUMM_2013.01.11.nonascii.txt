@@ -1,0 +1,1137 @@
+Script started on Fri, 11 Jan, 2013  6:02:29 PM
+
+PERL_DL_NONLAZY=1 /usr/bin/perl.exe "-Iblib/arch" "-Iblib/lib" "-MExtUtils::Command::MM" "-e" "test_harness(3, 'blib/lib', 'blib/arch')" t/*.t
+t/00compile.t ............. 
+1..52
+ok 1
+ok 2 - POD test for ExtUtils/Command/MM.pm
+ok 3
+ok 4 - POD test for ExtUtils/Liblist.pm
+ok 5
+ok 6 - POD test for ExtUtils/Liblist/Kid.pm (no pod)
+ok 7
+ok 8 - POD test for ExtUtils/MakeMaker.pm
+ok 9
+ok 10 - POD test for ExtUtils/MakeMaker/Config.pm
+ok 11
+ok 12 - POD test for ExtUtils/Mkbootstrap.pm
+ok 13
+ok 14 - POD test for ExtUtils/Mksymlists.pm
+ok 15
+ok 16 - POD test for ExtUtils/MM.pm
+ok 17
+ok 18 - POD test for ExtUtils/MM_AIX.pm
+ok 19
+ok 20 - POD test for ExtUtils/MM_Any.pm
+ok 21
+ok 22 - POD test for ExtUtils/MM_BeOS.pm
+ok 23
+ok 24 - POD test for ExtUtils/MM_Cygwin.pm
+ok 25
+ok 26 - POD test for ExtUtils/MM_Darwin.pm
+ok 27
+ok 28 - POD test for ExtUtils/MM_DOS.pm
+ok 29
+ok 30 - POD test for ExtUtils/MM_MacOS.pm
+ok 31
+ok 32 - POD test for ExtUtils/MM_NW5.pm
+ok 33
+ok 34 - POD test for ExtUtils/MM_OS2.pm
+ok 35
+ok 36 - POD test for ExtUtils/MM_QNX.pm
+ok 37
+ok 38 - POD test for ExtUtils/MM_Unix.pm
+ok 39
+ok 40 - POD test for ExtUtils/MM_UWIN.pm
+ok 41
+ok 42 - POD test for ExtUtils/MM_VMS.pm
+ok 43
+ok 44 - POD test for ExtUtils/MM_VOS.pm
+ok 45
+ok 46 - POD test for ExtUtils/MM_Win32.pm
+ok 47
+ok 48 - POD test for ExtUtils/MM_Win95.pm
+ok 49
+ok 50 - POD test for ExtUtils/MY.pm
+ok 51
+ok 52 - POD test for ExtUtils/testlib.pm
+ok
+t/01perl_bugs.t ........... 
+# The 0.01 / Gconvert bug
+ok 1
+1..1
+ok
+t/arch_check.t ............ 
+ok 1
+ok 2
+ok 3
+ok 4
+ok 5 # skip Win32 test
+ok 6
+ok 7
+ok 8
+ok 9
+1..9
+ok
+t/backwards.t ............. 
+1..2
+ok 1 - MM->can('new')
+ok 2 - MY->can('catdir')
+ok
+t/basic.t ................. 
+1..171
+ok 1 - setup
+ok 2 - chdir'd to Big-Dummy
+ok 3 - Makefile.PL exited with zero
+ok 4 - Makefile.PL output looks right
+ok 5 - Makefile.PL run in package main
+ok 6 - Makefile exists
+ok 7 -   its been touched
+ok 8 - make manifest created a MANIFEST
+ok 9 -   its not empty
+ok 10 -   exited normally
+ok 11 -   .ppd file generated
+ok 12 -   <SOFTPKG>
+ok 13 -   <ABSTRACT>
+ok 14 -   <AUTHOR>
+ok 15 -   <IMPLEMENTATION>
+ok 16 -   <REQUIRE>
+ok 17 - no <REQUIRE> for build_require
+ok 18 -   <ARCHITECTURE>
+ok 19 -   <CODEBASE>
+ok 20 -   </IMPLEMENTATION>
+ok 21 -   </SOFTPKG>
+ok 22 - make test
+ok 23 -   exited normally
+ok 24 - TEST_VERBOSE
+ok 25 -   successful
+ok 26 -   exited normally
+ok 27 - install
+ok 28
+ok 29 -   install dir created
+ok 30 -   Dummy.pm installed
+ok 31 -   Liar.pm installed
+ok 32 -   program installed
+ok 33 -   packlist created
+ok 34 -   perllocal.pod created
+ok 35 - install with PREFIX override
+ok 36
+ok 37 -   install dir created
+ok 38 -   Dummy.pm installed
+ok 39 -   Liar.pm installed
+ok 40 -   program installed
+ok 41 -   packlist created
+ok 42 -   perllocal.pod created
+ok 43 - install with DESTDIR
+ok 44
+ok 45 -   destdir created
+ok 46 -   Dummy.pm installed
+ok 47 -   Liar.pm installed
+ok 48 -   program installed
+ok 49 -   packlist created
+ok 50 -   perllocal.pod created
+ok 51
+ok 52 - DESTDIR should not appear in perllocal
+ok 53 - install with PREFIX override and DESTDIR
+ok 54
+ok 55 -   install dir not created
+ok 56 -   destdir created
+ok 57 -   Dummy.pm installed
+ok 58 -   Liar.pm installed
+ok 59 -   program installed
+ok 60 -   packlist created
+ok 61 -   perllocal.pod created
+ok 62 - disttest
+# META file validity
+ok 63 - META.yml not written to source dir
+ok 64 - META.yml written to dist dir
+ok 65 - temp META.yml file not left around
+ok 66 - MYMETA.yml is written to source dir
+ok 67 - MYMETA.yml is written to dist dir on disttest
+ok 68 - META.json not written to source dir
+ok 69 - META.json written to dist dir
+ok 70 - temp META.json file not left around
+ok 71 - MYMETA.json is written to source dir
+ok 72 - MYMETA.json is written to dist dir on disttest
+ok 73 - META.yml validates
+ok 74 - META.yml -> name
+ok 75 - META.yml -> version
+ok 76 - META.yml -> abstract
+ok 77 - META.yml -> licenses
+ok 78 - META.yml -> authors
+ok 79 - META.yml -> prereqs
+ok 80 - META.yml -> no_index
+ok 81 - META.yml -> dynamic_config
+ok 82 - MYMETA.yml validates
+ok 83 - MYMETA.yml -> name
+ok 84 - MYMETA.yml -> version
+ok 85 - MYMETA.yml -> abstract
+ok 86 - MYMETA.yml -> licenses
+ok 87 - MYMETA.yml -> authors
+ok 88 - MYMETA.yml -> prereqs
+ok 89 - MYMETA.yml -> no_index
+ok 90 - MYMETA.yml -> dynamic_config
+ok 91 - META.json validates
+ok 92 - META.json -> name
+ok 93 - META.json -> version
+ok 94 - META.json -> abstract
+ok 95 - META.json -> licenses
+ok 96 - META.json -> authors
+ok 97 - META.json -> prereqs
+ok 98 - META.json -> no_index
+ok 99 - META.json -> dynamic_config
+ok 100 - MYMETA.json validates
+ok 101 - MYMETA.json -> name
+ok 102 - MYMETA.json -> version
+ok 103 - MYMETA.json -> abstract
+ok 104 - MYMETA.json -> licenses
+ok 105 - MYMETA.json -> authors
+ok 106 - MYMETA.json -> prereqs
+ok 107 - MYMETA.json -> no_index
+ok 108 - MYMETA.json -> dynamic_config
+ok 109 - MYMETA.yml validates
+ok 110 - MYMETA.yml -> name
+ok 111 - MYMETA.yml -> version
+ok 112 - MYMETA.yml -> abstract
+ok 113 - MYMETA.yml -> licenses
+ok 114 - MYMETA.yml -> authors
+ok 115 - MYMETA.yml -> prereqs
+ok 116 - MYMETA.yml -> no_index
+ok 117 - MYMETA.yml -> dynamic_config
+ok 118 - MYMETA.json validates
+ok 119 - MYMETA.json -> name
+ok 120 - MYMETA.json -> version
+ok 121 - MYMETA.json -> abstract
+ok 122 - MYMETA.json -> licenses
+ok 123 - MYMETA.json -> authors
+ok 124 - MYMETA.json -> prereqs
+ok 125 - MYMETA.json -> no_index
+ok 126 - MYMETA.json -> dynamic_config
+ok 127 - MANIFEST has META.yml
+ok 128 - MANFIEST has META.json
+ok 129 - META.yml deleted
+ok 130 - MYMETA.yml deleted
+ok 131 - META.json deleted
+ok 132 - MYMETA.json deleted
+ok 133 - MYMETA.yml generation not suppressed by NO_META
+ok 134 - MYMETA.json generation not suppressed by NO_META
+ok 135 - Makefile.PL exited with zero
+ok 136 - META.yml generation suppressed by NO_META
+ok 137 - META.json generation suppressed by NO_META
+ok 138 - distdir
+ok 139 - META.yml generation suppressed by NO_META
+ok 140 - META.json generation suppressed by NO_META
+ok 141 - MYMETA.yml deleted
+ok 142 - MYMETA.json deleted
+ok 143 - Makefile.PL exited with zero
+ok 144 - distdir
+ok 145 - MYMETA.yml generation suppressed by NO_MYMETA
+ok 146 - MYMETA.json generation suppressed by NO_MYMETA
+ok 147 - META.yml generation not suppressed by NO_MYMETA
+ok 148 - META.json generation not suppressed by NO_MYMETA
+ok 149 - Makefile.PL exited with zero
+ok 150 - distdir
+ok 151 - META.yml generated in distdir
+ok 152 - META.json generated in distdir
+ok 153 - MYMETA.yml not yet generated in distdir
+ok 154 - MYMETA.json generated in distdir
+ok 155 - MYMETA abstract from META, not Makefile.PL
+ok 156 - Saved edited META.json in distdir
+ok 157 - Saved edited META.yml in distdir
+ok 158
+ok 159 - META.yml confirmed in distdir
+ok 160 - META.json confirmed in distdir
+ok 161 - Makefile.PL in distdir exited with zero
+ok 162
+ok 163 - MYMETA.yml generated in distdir
+ok 164 - MYMETA.json generated in distdir
+ok 165 - META abstract is same as was saved
+ok 166 - MYMETA abstract from META, not Makefile.PL
+ok 167 - Makefile.PL exited with zero
+ok 168 - init_dirscan skipped distdir
+ok 169 - realclean
+ok 170
+ok 171 - teardown
+ok
+t/build_man.t ............. 
+1..9
+ok 1 - setup
+ok 2 - chdir'd to Big-Dummy
+ok 3
+ok 4
+ok 5
+ok 6
+ok 7
+ok 8
+ok 9 - teardown
+ok
+t/cd.t .................... 
+1..4
+ok 1
+ok 2
+ok 3
+ok 4 # skip VMS' cd requires vmspath which is only on VMS
+ok
+t/config.t ................ 
+1..3
+ok 1 - use ExtUtils::MakeMaker::Config;
+ok 2
+ok 3
+ok
+t/dir_target.t ............ 
+1..1
+ok 1 - MM->can('dir_target')
+ok
+t/echo.t .................. 
+# Testing simple echo
+# Temp dir: /tmp/66bg_VlUPU
+ok 1 - make: simple echo
+ok 2 - bar.txt exists
+ok 3 - contents
+# Testing multiline echo
+# Temp dir: /tmp/SI_cSRwyDk
+ok 4 - make: multiline echo
+ok 5 - something.txt exists
+ok 6 - contents
+# Testing dollar signs escaped
+# Temp dir: /tmp/VoPA_TPMnq
+ok 7 - make: dollar signs escaped
+ok 8 - something.txt exists
+ok 9 - contents
+# Testing variables escaped
+# Temp dir: /tmp/PPUo4_aOyQ
+ok 10 - make: variables escaped
+ok 11 - something.txt exists
+ok 12 - contents
+# Testing allow_variables
+# Temp dir: /tmp/DO6uz1M4k9
+ok 13 - make: allow_variables
+ok 14 - bar.txt exists
+ok 15 - contents
+# Testing append
+# Temp dir: /tmp/LMduzYnL2f
+ok 16 - make: append
+ok 17 - bar.txt exists
+ok 18 - contents
+1..18
+ok
+t/FIRST_MAKEFILE.t ........ 
+1..7
+ok 1 - setup
+ok 2 - chdir'd to Big-Dummy
+ok 3 - Makefile.PL exited with zero
+ok 4 - FIRST_MAKEFILE honored
+ok 5 - Makefile.PL output looks right
+ok 6
+ok 7 - teardown
+ok
+t/fix_libs.t .............. 
+ok 1 - fix_libs(undef)
+ok 2 - fix_libs(foo)
+ok 3 - fix_libs(ARRAY(0x201bab38))
+ok 4 - fix_libs(ARRAY(0x201baa60))
+ok 5 - fix_libs(ARRAY(0x201ba970))
+ok 6 - fix_libs(ARRAY(0x201ba820))
+ok 7 - fix_libs(ARRAY(0x201ba700))
+ok 8 - fix_libs(  )
+1..8
+ok
+t/fixin.t ................. 
+1..22
+ok 1 - setup
+ok 2 - chdir'd to Big-Dummy
+ok 3 - $/ not clobbered
+ok 4 - $\ not clobbered
+ok 5 - write fixin_test
+ok 6 - read fixin_test
+ok 7 - \#! replaced
+ok 8 - switch retained
+ok 9 - Program text retained
+ok 10 - cleaned up fixin_test
+ok 11 - write fixin_test
+ok 12 - read fixin_test
+ok 13 - \#! replaced
+ok 14 - switch retained
+ok 15 - Program text retained
+ok 16 - cleaned up fixin_test
+ok 17 - write fixin_test
+ok 18 - read fixin_test
+ok 19
+ok 20 - cleaned up fixin_test
+ok 21
+ok 22 - teardown
+ok
+t/hints.t ................. 
+1..3
+ok 1
+ok 2
+ok 3 - hint files produce errors
+ok
+t/INST.t .................. 
+1..26
+ok 1 - setup
+ok 2 - chdir'd to Big-Dummy
+ok 3
+ok 4 - The object isa ExtUtils::MakeMaker
+ok 5 - NAME
+ok 6 - VERSION
+ok 7 - PERLPREFIX
+ok 8 - PERL_CORE
+ok 9 - PERL_SRC
+ok 10 - PERM_RW
+ok 11 - PERM_RWX
+ok 12 - INST_ARCHLIB
+ok 13 - INST_BIN
+ok 14
+ok 15 - CHILD INST_ARCHLIB
+ok 16 - CHILD INST_BIN
+ok 17 - INST_LIB
+ok 18 - INSTALLDIRS
+ok 19
+ok 20 - The object isa ExtUtils::MakeMaker
+ok 21
+ok 22
+ok 23
+ok 24
+ok 25
+ok 26 - teardown
+ok
+t/INST_PREFIX.t ........... 
+1..52
+ok 1 - setup
+ok 2 - chdir'd to Big-Dummy
+ok 3
+ok 4 - PREFIX set based on INSTALLDIRS
+ok 5 - The object isa ExtUtils::MakeMaker
+ok 6 - NAME
+ok 7 - VERSION
+ok 8
+ok 9
+ok 10
+ok 11
+ok 12
+ok 13 - PREFIX
+ok 14 - $(PREFIX) overrides PERLPREFIX
+ok 15 - $(PREFIX) overrides SITEPREFIX
+ok 16 - $(PREFIX) overrides VENDORPREFIX
+ok 17 - PERL_CORE
+ok 18 - PERL_SRC
+ok 19 - $(SITEPREFIX) + sitearch
+ok 20 - $(SITEPREFIX) + sitelib
+ok 21 - $(SITEPREFIX) + sitebin
+ok 22 - $(SITEPREFIX) + siteman1dir
+ok 23 - $(SITEPREFIX) + siteman3dir
+ok 24 - $(PERLPREFIX) + archlib
+ok 25 - $(PERLPREFIX) + privlib
+ok 26 - $(PERLPREFIX) + bin
+ok 27 - $(PERLPREFIX) + man1dir
+ok 28 - $(PERLPREFIX) + man3dir
+ok 29 - $(PERLPREFIX) + script
+ok 30 - $(VENDORPREFIX) + vendorarch
+ok 31 - $(VENDORPREFIX) + vendorlib
+ok 32 - $(VENDORPREFIX) + vendorbin
+ok 33 - $(VENDORPREFIX) + vendorman1dir
+ok 34 - $(VENDORPREFIX) + vendorman3dir
+ok 35
+ok 36
+ok 37 - installvendorman1dir (in %Config) not modified
+ok 38 - installvendorman3dir (not in %Config) set
+ok 39
+ok 40
+ok 41
+ok 42
+ok 43
+ok 44
+ok 45
+ok 46
+ok 47
+ok 48
+ok 49
+ok 50
+ok 51
+ok 52 - teardown
+ok
+t/INSTALL_BASE.t .......... 
+1..20
+ok 1 - setup
+ok 2 - chdir'd to Big-Dummy
+ok 3 - Makefile.PL exited with zero
+ok 4 - Makefile.PL output looks right
+ok 5 -   make install exited normally
+ok 6
+ok 7 -   install dir created
+ok 8 -   ../dummy-install/lib/perl5/Big/Dummy.pm installed
+ok 9 -   ../dummy-install/lib/perl5/Big/Dummy.pm readable
+ok 10 -   ../dummy-install/lib/perl5/Big/Liar.pm installed
+ok 11 -   ../dummy-install/lib/perl5/Big/Liar.pm readable
+ok 12 -   ../dummy-install/bin/program installed
+ok 13 -   ../dummy-install/bin/program readable
+ok 14 -   ../dummy-install/lib/perl5/cygwin-thread-multi-64int/perllocal.pod installed
+ok 15 -   ../dummy-install/lib/perl5/cygwin-thread-multi-64int/perllocal.pod readable
+ok 16 -   ../dummy-install/lib/perl5/cygwin-thread-multi-64int/auto/Big/Dummy/.packlist installed
+ok 17 -   ../dummy-install/lib/perl5/cygwin-thread-multi-64int/auto/Big/Dummy/.packlist readable
+ok 18 - realclean
+ok 19
+ok 20 - teardown
+ok
+t/installed_file.t ........ 
+ok 1 - Module not installed
+ok 2
+ok 3 - single name module
+ok 4 - Foo::Bar style
+1..4
+ok
+t/is_of_type.t ............ 
+ok 1 - _is_of_type(23, ''): 1
+ok 2 - _is_of_type(ARRAY(0x2006bff0), ''): 0
+ok 3 - _is_of_type(HASH(0x20070cd0), ''): 0
+ok 4 - _is_of_type(ARRAY(0x204994e0), 'HASH'): 0
+ok 5 - _is_of_type(HASH(0x20499588), 'HASH'): 1
+ok 6 - _is_of_type(Foo=HASH(0x2047afd8), 'Foo'): 1
+ok 7 - _is_of_type(Bar=HASH(0x2047b140), 'Foo'): 0
+ok 8 - _is_of_type(Foo=ARRAY(0x2047b2a8), ''): 0
+ok 9 - _is_of_type(Foo=ARRAY(0x2047b350), 'HASH'): 0
+ok 10 - _is_of_type(Foo=ARRAY(0x2047b3f8), 'ARRAY'): 1
+1..10
+ok
+t/Liblist.t ............... 
+1..6
+ok 1 - use ExtUtils::Liblist;
+ok 2 - ExtUtils::Liblist::ext() defined for backwards compat
+ok 3 - enough output
+ok 4 - bogus library not added
+ok 5 - had warning
+ok 6
+ok
+t/Liblist_Kid.t ........... 
+ok 1 - use ExtUtils::Liblist::Kid;
+1..1
+ok
+t/make.t .................. 
+1..3
+ok 1
+ok 2
+ok 3
+ok
+t/MakeMaker_Parameters.t .. 
+ok 1 - nothing
+ok 2
+ok 3
+ok 4
+ok 5
+1..5
+ok
+t/maketext_filter.t ....... 
+1..6
+ok 1 - default filter
+ok 2 - VMS filter
+ok 3 - default filter
+ok 4 - VMS filter
+ok 5 - default filter
+ok 6 - VMS filter
+ok
+t/meta_convert.t .......... 
+# Filename as version
+ok 1
+ok 2 - we know how to deal with bogus versions defined in Makefile.PL
+ok 3 - they're converted to empty string
+# 'undef' version from parse_version
+ok 4
+ok 5 - when there's no $VERSION in Module.pm, $self->{VERSION} = 'undef'; via MM_Unix::parse_version and we know how to deal with that
+ok 6 - they're converted to empty string
+# x.y.z version
+ok 7
+ok 8 - we know how to deal with our $VERSION = 0.0.3; style versions defined in the module
+ok 9 - they're converted to empty string
+# .5 version
+ok 10
+ok 11 - we know how to deal with our $VERSION = '.5'; style versions defined in the module
+ok 12 - they're converted to empty string
+# Non-camel case metadata
+ok 13 - we know how to deal with non-camel-cased custom meta resource keys defined in Makefile.PL
+ok 14 - they're camel-cased
+# version object in provides
+ok 15
+1..15
+ok
+t/metafile_data.t ......... 
+1..22
+ok 1
+ok 2 - rt.cpan.org 39348
+ok 3
+ok 4
+ok 5
+ok 6 - CONFIGURE_REQUIRES
+ok 7 - CONFIGURE_REQUIRES
+ok 8 - META.yml data (META_ADD wins)
+ok 9 - MYMETA JSON data (BUILD_REQUIRES wins)
+ok 10 - CPAN::Meta mentioned in the generated_by
+ok 11 - MYMETA YAML data (BUILD_REQUIRES wins)
+ok 12 - CPAN::Meta mentioned in the generated_by
+ok 13 - no build_requires in v2 META
+ok 14 - build requires are one thing in META v2...
+ok 15 - ...and test requires are another
+# CPAN::Meta bug using the module version instead of the meta spec version
+ok 16 - internally, our MYMETA struct is v2
+ok 17
+ok 18
+ok 19 - MYMETA.yml correctly downgraded to 1.4
+ok 20 - MYMETA.json at 2 or better
+# A bad license string
+ok 21 - in yaml
+ok 22 - in json
+ok
+t/metafile_file.t ......... 
+1..16
+ok 1 - dump for flat hashes works ok
+ok 2 - dumping strings and undefs is ok
+ok 3 - dump for nested hashes works ok
+ok 4 - nested hashes sort ascii-betically
+ok 5 - dump for hashes (with more nesting) works ok
+ok 6 - array of strings are handled ok
+ok 7 - empty hashes and arrays
+ok 8 - dump for something like META.yml works
+ok 9 - META.yml with extra 'recommends' works
+ok 10 - META.yml with extra 'no_index' works
+ok 11 - META.yml can be read by YAML.pm
+ok 12 # skip Need YAML::Tiny to test if it can load META.yml
+ok 13 # skip Need YAML::Tiny to test if it can load META.yml
+ok 14 - no quoting is done
+ok 15 - we don't like but hash/array refs
+ok 16 - we also don't like but array of strings
+ok
+t/min_perl_version.t ...... 
+1..32
+ok 1 - setup
+ok 2 - entering dir Min-PerlVers
+# Argument verification
+ok 3 - capturing stdout
+ok 4 - MIN_PERL_VERSION=5 does not trigger a warning
+ok 5 -   nor a hard failure
+ok 6 - MIN_PERL_VERSION=X.Y.Z does not trigger a warning
+ok 7 -   nor a hard failure
+ok 8 - MIN_PERL_VERSION=999999 triggers a warning
+ok 9 -   with expected message text
+ok 10 -   and without a hard failure
+ok 11 - MIN_PERL_VERSION=999999 and PREREQ_FATAL: no warning
+ok 12 -   correct exception
+ok 13 - Invalid MIN_PERL_VERSION is fatal
+# PREREQ_PRINT output
+ok 14 - PREREQ_PRINT exiting normally
+ok 15 -   and talking like we expect
+ok 16 - prereqs evaluable
+ok 17 -   and looking correct
+ok 18 - min version also correct
+# PRINT_PREREQ output
+ok 19 - PRINT_PREREQ exiting normally
+ok 20 -   and not complaining loudly
+ok 21 - dump has prereqs and perl version
+# generated files verification
+ok 22 - Makefile.PL exiting normally
+ok 23 - Makefile present
+# ppd output
+ok 24 - Make ppd exiting normally
+ok 25 -   .ppd file present
+ok 26 -   .ppd file content good
+# META.yml output
+ok 27 - META.yml validates
+ok 28 - META.yml has runtime/requires perl 5.005
+ok 29 - META.json validates
+ok 30 - META.json has runtime/requires perl 5.005
+ok 31 - leaving dir
+ok 32 - teardown
+ok
+t/miniperl.t .............. 
+1..0 # SKIP miniperl test only necessary for the perl core
+skipped: miniperl test only necessary for the perl core
+t/Mkbootstrap.t ........... 
+1..18
+ok 1 - use ExtUtils::Mkbootstrap;
+ok 2 - Mkbootstrap should backup the .bs file
+ok 3 - backup should be a perfect copy
+ok 4 - Mkbootstrap should not backup an empty file
+ok 5 - should report libraries in Verbose mode
+ok 6 - should still report libraries
+ok 7 - baseext_BS file should be require()d
+ok 8 - should die given bad filename
+ok 9 - should not die, given good filename
+ok 10 - should print status
+ok 11 - should print verbose status on request
+ok 12 - should have written a new .bs file
+ok 13 - file should have boilerplate
+ok 14 - should have written array to file
+ok 15 - should be able to open a file again
+ok 16 - should hush without Verbose set
+ok 17 - should load libraries if needed
+ok 18 - should write $DynaLoader::bscode if set
+ok
+t/MM_Any.t ................ 
+1..7
+ok 1 - use ExtUtils::MM;
+ok 2 - MM->can(...)
+ok 3 - os_flavor() returned something
+ok 4 - os_flavor_is() one flavor
+ok 5 -     many flavors
+ok 6 -     wrong flavor
+ok 7 -     no flavor
+ok
+t/MM_BeOS.t ............... 
+1..0 # SKIP This is not BeOS
+skipped: This is not BeOS
+t/MM_Cygwin.t ............. 
+1..14
+ok 1 - use ExtUtils::MM_Cygwin;
+ok 2 - canonpath() method should work just like the one in File::Spec
+ok 3 - cflags() should return CFLAGS member data, if set
+ok 4 - ... should set OPTIMIZE
+ok 5 - ... should set PERLTYPE
+ok 6 - ... should set CCFLAGS
+ok 7 - manifypods() should return without PODS values set
+ok 8 - ... should add MAN3PODS targets
+ok 9 - PERL_ARCHIVE
+ok 10 - PERL_ARCHIVE_AFTER
+ok 11 - EXPORT_LIST
+ok 12 - '/cygdrive/c/windows/system32/cmd.exe' should be executable"
+ok 13 - '/cygdrive/c' should never be executable
+ok 14 - '/usr/bin/perl' should be executable
+ok
+t/MM_NW5.t ................ 
+1..0 # SKIP This is not NW5
+skipped: This is not NW5
+t/MM_OS2.t ................ 
+1..0 # SKIP This is not OS/2
+skipped: This is not OS/2
+t/MM_Unix.t ............... 
+1..0 # SKIP Non-Unix platform
+skipped: Non-Unix platform
+t/MM_VMS.t ................ 
+1..0 # SKIP This is not VMS
+skipped: This is not VMS
+t/MM_Win32.t .............. 
+1..0 # SKIP This is not Win32
+skipped: This is not Win32
+t/oneliner.t .............. 
+1..16
+ok 1 - use ExtUtils::MM;
+ok 2 - The object isa ExtUtils::MakeMaker
+ok 3 - The object isa ExtUtils::MM_Any
+ok 4 - quotes
+ok 5 - dollar signs
+ok 6 - switches
+ok 7 - single quote
+ok 8 - bracket, then quote
+ok 9 - quote, then bracket
+ok 10 - quotes and brackets mixed
+ok 11 - brackets, pipes and quotes
+ok 12 - example 8.1
+ok 13 - example 8.2
+ok 14 - example 8.3
+ok 15 - example 8.4
+ok 16 - example 8.5
+ok
+t/parse_abstract.t ........ 
+ok 1 - Simple abstract
+ok 2 - Name.pm
+ok 3 - double dash
+ok 4 - Only in POD
+ok 5 - more spaces
+1..5
+ok
+t/parse_version.t ......... 
+1..124
+ok 1 - $_ not leaked by parse_version
+ok 2 -  package Foo::Bar 1.23 ;
+ok 3 -  package Foo::Bar 1.23 ; does not cause warnings
+ok 4 - $_ not leaked by parse_version
+ok 5 - "package Foo 1.23"
+ok 6 - "package Foo 1.23" does not cause warnings
+ok 7 - $_ not leaked by parse_version
+ok 8 - $FOO::VERSION = '1.10';
+ok 9 - $FOO::VERSION = '1.10'; does not cause warnings
+ok 10 - $_ not leaked by parse_version
+ok 11 - $Something::VERSION != 1.0
+ok 12 - $Something::VERSION != 1.0 does not cause warnings
+ok 13 - $_ not leaked by parse_version
+ok 14 - $Something::VERSION <= 1.0
+ok 15 - $Something::VERSION <= 1.0 does not cause warnings
+ok 16 - $_ not leaked by parse_version
+ok 17 - $Something::VERSION == 1.0
+ok 18 - $Something::VERSION == 1.0 does not cause warnings
+ok 19 - $_ not leaked by parse_version
+ok 20 - $Something::VERSION == 1.0\n$VERSION = 2.3\n
+ok 21 - $Something::VERSION == 1.0\n$VERSION = 2.3\n does not cause warnings
+ok 22 - $_ not leaked by parse_version
+ok 23 - $Something::VERSION == 1.0\n$VERSION = 2.3\n$VERSION = 4.5\n
+ok 24 - $Something::VERSION == 1.0\n$VERSION = 2.3\n$VERSION = 4.5\n does not cause warnings
+ok 25 - $_ not leaked by parse_version
+ok 26 - $Something::VERSION >= 1.0
+ok 27 - $Something::VERSION >= 1.0 does not cause warnings
+ok 28 - $_ not leaked by parse_version
+ok 29 - $VERSION = '1.00'
+ok 30 - $VERSION = '1.00' does not cause warnings
+ok 31 - $_ not leaked by parse_version
+ok 32 - $VERSION = -1.0
+ok 33 - $VERSION = -1.0 does not cause warnings
+ok 34 - $_ not leaked by parse_version
+ok 35 - $VERSION = 0.0
+ok 36 - $VERSION = 0.0 does not cause warnings
+ok 37 - $_ not leaked by parse_version
+ok 38 - $VERSION = 0.02
+ok 39 - $VERSION = 0.02 does not cause warnings
+ok 40 - $_ not leaked by parse_version
+ok 41 - $VERSION = qv("1.2.3")
+ok 42 - $VERSION = qv("1.2.3") does not cause warnings
+ok 43 - $_ not leaked by parse_version
+ok 44 - $VERSION = sprintf("%d.%03d", q$Revision: 3.74 $ =~ /(\d+)\.(\d+)/);
+ok 45 - $VERSION = sprintf("%d.%03d", q$Revision: 3.74 $ =~ /(\d+)\.(\d+)/); does not cause warnings
+ok 46 - $_ not leaked by parse_version
+ok 47 - $VERSION = substr(q$Revision: 2.8 $, 10) + 2 . "";
+ok 48 - $VERSION = substr(q$Revision: 2.8 $, 10) + 2 . ""; does not cause warnings
+ok 49 - $_ not leaked by parse_version
+ok 50 - $VERSION = undef
+ok 51 - $VERSION = undef does not cause warnings
+ok 52 - $_ not leaked by parse_version
+ok 53 - $wibble  = 1.0
+ok 54 - $wibble  = 1.0 does not cause warnings
+ok 55 - $_ not leaked by parse_version
+ok 56 - ($VERSION) = q$Revision: 32208 $ =~ /(\d+)/g;
+ok 57 - ($VERSION) = q$Revision: 32208 $ =~ /(\d+)/g; does not cause warnings
+ok 58 - $_ not leaked by parse_version
+ok 59 - *FOO::VERSION = \'1.11';
+ok 60 - *FOO::VERSION = \'1.11'; does not cause warnings
+ok 61 - $_ not leaked by parse_version
+ok 62 - *VERSION = \'1.01'
+ok 63 - *VERSION = \'1.01' does not cause warnings
+ok 64 - $_ not leaked by parse_version
+ok 65 - elsif ( $Something::VERSION >= 1.99 )
+ok 66 - elsif ( $Something::VERSION >= 1.99 ) does not cause warnings
+ok 67 - $_ not leaked by parse_version
+ok 68 - if( $Foo::VERSION >= 3.00 ) {
+ok 69 - if( $Foo::VERSION >= 3.00 ) { does not cause warnings
+ok 70 - $_ not leaked by parse_version
+ok 71 - local $FOO::VERSION = '1.30'
+ok 72 - local $FOO::VERSION = '1.30' does not cause warnings
+ok 73 - $_ not leaked by parse_version
+ok 74 - local $VERISON = '1.02'
+ok 75 - local $VERISON = '1.02' does not cause warnings
+ok 76 - $_ not leaked by parse_version
+ok 77 - my $VERSION = '1.01'
+ok 78 - my $VERSION = '1.01' does not cause warnings
+ok 79 - $_ not leaked by parse_version
+ok 80 - our $VERSION = '1.23';
+ok 81 - our $VERSION = '1.23'; does not cause warnings
+ok 82 - $_ not leaked by parse_version
+ok 83 - our $VERSION = 2.34;\npackage Foo 1.23;\n
+ok 84 - our $VERSION = 2.34;\npackage Foo 1.23;\n does not cause warnings
+ok 85 - $_ not leaked by parse_version
+ok 86 - package Foo 1.230;
+ok 87 - package Foo 1.230; does not cause warnings
+ok 88 - $_ not leaked by parse_version
+ok 89 - package Foo 1.23;
+ok 90 - package Foo 1.23; does not cause warnings
+ok 91 - $_ not leaked by parse_version
+ok 92 - package Foo 1.23;\nour $VERSION = 2.34;\n
+ok 93 - package Foo 1.23;\nour $VERSION = 2.34;\n does not cause warnings
+ok 94 - $_ not leaked by parse_version
+ok 95 - package Foo 1.23_01;
+ok 96 - package Foo 1.23_01; does not cause warnings
+ok 97 - $_ not leaked by parse_version
+ok 98 - package Foo v1.2.3;
+ok 99 - package Foo v1.2.3; does not cause warnings
+ok 100 - $_ not leaked by parse_version
+ok 101 - package Foo v1.23_01;
+ok 102 - package Foo v1.23_01; does not cause warnings
+ok 103 - $_ not leaked by parse_version
+ok 104 - package Foo'Bar 1.23;
+ok 105 - package Foo'Bar 1.23; does not cause warnings
+ok 106 - $_ not leaked by parse_version
+ok 107 - package Foo::100;\nour $VERSION = 2.34;\n
+ok 108 - package Foo::100;\nour $VERSION = 2.34;\n does not cause warnings
+ok 109 - $_ not leaked by parse_version
+ok 110 - package Foo::Bar 1.2.3;
+ok 111 - package Foo::Bar 1.2.3; does not cause warnings
+ok 112 - $_ not leaked by parse_version
+ok 113 - package Foo::Bar 1.23;
+ok 114 - package Foo::Bar 1.23; does not cause warnings
+ok 115 - $_ not leaked by parse_version
+ok 116 - package Foo::Bar v1.2.3;
+ok 117 - package Foo::Bar v1.2.3; does not cause warnings
+ok 118 - $_ not leaked by parse_version
+ok 119 - use version; $VERSION = qv("1.2.3");
+ok 120 - use version; $VERSION = qv("1.2.3"); does not cause warnings
+ok 121 - $_ not leaked by parse_version
+ok 122 - eval 'sub version {...} in version string
+ok 123 - $_ not leaked by parse_version
+ok 124 - version.pm not confused by version sub
+ok
+t/PL_FILES.t .............. 
+1..9
+ok 1
+ok 2
+ok 3
+ok 4 - single.out was created
+ok 5 - 1.out was created
+ok 6 - 2.out was created
+ok 7 - blib/lib/PL/Bar.pm was created
+ok 8
+ok 9
+ok
+t/pm.t .................... 
+1..6
+ok 1 - setup
+ok 2 - chdir'd to Big-Dummy
+ok 3
+ok 4
+ok 5
+ok 6 - teardown
+ok
+t/pm_to_blib.t ............ 
+ok 1 - setup
+ok 2 - chdir'd to Big-Dummy
+ok 3 - run(/usr/bin/perl.exe Makefile.PL)
+ok 4 - run(make)
+ok 5 - blib copied pm file
+ok 6
+ok 7 - run(make)
+ok 8
+ok 9 - run(/usr/bin/perl.exe Makefile.PL)
+ok 10 - run(make)
+ok 11
+ok 12 - blib copied pm file
+ok 13
+ok 14 - teardown
+1..14
+ok
+t/pod2man.t ............... 
+1..3
+ok 1
+ok 2
+ok 3
+ok
+t/postamble.t ............. 
+1..8
+ok 1 - setup
+ok 2 - chdir'd to Big-Dummy
+ok 3 - postamble args passed
+ok 4 - postamble argument not warned about
+ok 5
+ok 6 - postamble added to the Makefile
+ok 7
+ok 8 - teardown
+ok
+t/prefixify.t ............. 
+1..4
+ok 1 - prefixify w/defaults
+ok 2 - prefixify w/defaults and PREFIX
+ok 3 - relative paths + PREFIX
+ok 4 # skip Test for DOSish prefixification
+ok
+t/prereq.t ................ 
+1..16
+ok 1 - setup
+ok 2 - chdir'd to Big-Dummy
+ok 3
+ok 4
+ok 5
+ok 6
+ok 7
+ok 8
+ok 9
+ok 10
+ok 11
+ok 12 - PREREQ_FATAL
+ok 13
+ok 14 - PREREQ_FATAL happens before CONFIGURE
+ok 15
+ok 16 - teardown
+ok
+t/prereq_print.t .......... 
+1..11
+ok 1 - setup
+ok 2 - chdir'd to Big-Dummy
+ok 3 - PREREQ_PRINT produces no Makefile
+ok 4 -   exited normally
+ok 5 - prereqs dumped
+ok 6 -   without error
+ok 7 - PRINT_PREREQ produces no Makefile
+ok 8 -   exited normally
+ok 9 - prereqs dumped
+ok 10
+ok 11 - teardown
+ok
+t/problems.t .............. 
+1..6
+ok 1 - setup
+ok 2 - chdir'd to Problem-Module
+ok 3 - cwd in @INC
+ok 4 - Makefile.PL death in subdir warns
+ok 5
+ok 6 - teardown
+ok
+t/prompt.t ................ 
+1..11
+ok 1 - no args
+ok 2 - undef message
+ok 3 - no default
+ok 4 -   question
+ok 5 - undef default
+ok 6 -   question
+ok 7 - default
+ok 8 -   question
+ok 9 - STDIN not a tty
+ok 10 - from STDIN
+ok 11 -   question
+ok
+t/recurs.t ................ 
+1..26
+ok 1 - setup
+ok 2 - chdir'd to Recurs
+ok 3 - Makefile.PL exited with zero
+ok 4 - Makefile written
+ok 5 - sub Makefile written
+ok 6 - recursive make exited normally
+ok 7
+ok 8 - cleaning out recurs
+ok 9 -   setting up fresh copy
+ok 10 - chdir'd to Recurs
+ok 11 - Makefile.PL NORECURS=1 exited with zero
+ok 12 - Makefile written
+ok 13 - sub Makefile not written
+ok 14 - recursive make exited normally
+ok 15
+ok 16 - cleaning out recurs
+ok 17 -   setting up fresh copy
+ok 18 - chdir'd to Recurs
+ok 19 - Makefile.PL exited with zero
+ok 20 - Makefile written
+ok 21 - sub Makefile written
+ok 22
+ok 23 - prepend .. not stomping WriteMakefile args
+ok 24 - test failure in a subdir causes make to fail
+ok 25
+ok 26 - teardown
+ok
+t/revision.t .............. 
+1..4
+ok 1 - use ExtUtils::MakeMaker;
+ok 2 - use ExtUtils::MM_VMS;
+ok 3
+ok 4
+ok
+t/several_authors.t ....... 
+1..20
+ok 1 - setup
+ok 2 - entering dir Multiple-Authors
+# argument verification
+ok 3 - capturing stdout
+ok 4 - arrayref in AUTHOR does not trigger a warning
+ok 5 -   nor a hard failure
+# argument verification via CONFIGURE
+ok 6 - capturing stdout
+ok 7 - scalar in AUTHOR inside CONFIGURE does not trigger a warning
+ok 8 -   nor a hard failure
+# generated files verification
+ok 9 - Makefile.PL exiting normally
+ok 10 - Makefile present
+# ppd output
+ok 11 - Make ppd exiting normally
+ok 12 -   .ppd file present
+ok 13 -   .ppd file content good
+# META.yml output
+ok 14 - Make metafile exiting normally
+ok 15 - META.yml validates
+ok 16 - META.yml content good
+ok 17 - META.json validates
+ok 18 - META.json content good
+ok 19 - leaving dir
+ok 20 - teardown
+ok
+t/split_command.t ......... 
+1..7
+ok 1 - max_exec_len
+ok 2 -   forced a short max_exec_len
+ok 3
+ok 4
+ok 5
+ok 6 - pairs preserved
+ok 7 - no args means no commands
+ok
+t/test_boilerplate.t ...... 
+ok 1 - Your test code goes here
+1..1
+ok
+t/testlib.t ............... 
+1..5
+ok 1 - No blib dirs yet in @INC
+ok 2 - use ExtUtils::testlib;
+ok 3 - ExtUtils::testlib added two @INC dirs!
+ok 4 -   and theyre absolute
+ok 5 - @INC is not tainted
+ok
+t/VERSION_FROM.t .......... 
+1..1
+ok 1 - VERSION_FROM when $VERSION = 0
+ok
+t/WriteEmptyMakefile.t .... 
+1..5
+ok 1 - main->can('WriteEmptyMakefile')
+ok 2
+ok 3
+ok 4
+ok 5
+ok
+t/writemakefile_args.t .... 
+1..39
+ok 1 - setup
+ok 2 - chdir'd to Big-Dummy
+ok 3
+ok 4
+ok 5
+ok 6
+ok 7
+ok 8
+ok 9
+ok 10
+ok 11
+ok 12
+ok 13
+ok 14
+ok 15
+ok 16
+ok 17
+ok 18
+ok 19
+ok 20
+ok 21
+ok 22
+ok 23 - The object isa version
+ok 24
+ok 25
+ok 26
+ok 27 - The object isa version
+ok 28
+ok 29
+ok 30
+ok 31
+ok 32
+ok 33
+ok 34
+ok 35
+ok 36
+ok 37
+ok 38
+ok 39 - teardown
+ok
+t/xs.t .................... 
+1..5
+ok 1 - setup
+ok 2 - chdir'd to XS-Test
+ok 3 - Makefile.PL exited with zero
+ok 4 -   make exited normally
+ok 5 -   make test exited normally
+ok
+All tests successful.
+Files=61, Tests=913, 509 wallclock secs ( 1.59 usr  1.61 sys + 133.05 cusr 311.91 csys = 448.15 CPU)
+Result: PASS
+
+Script done on Fri, 11 Jan, 2013  6:11:02 PM
